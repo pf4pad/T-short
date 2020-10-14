@@ -54,6 +54,7 @@ ul
   align-items: center
   justify-content: center
   flex-direction: column
+  transition: width .3s
 
   &--opened
     width: 325px
@@ -62,11 +63,13 @@ ul
   &__menu
     position: absolute
     left: -400px
+    transition: left .3s
 
   &--opened .sidebar__menu
     left: 0
     width: 100%
     text-align: center
+    transition-delay: .1s
 
   &__hamburger-icon
     width: 29px

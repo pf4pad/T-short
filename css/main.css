@@ -76,6 +76,8 @@ ul > li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transition: width .3s;
+  transition: width .3s;
 }
 
 .sidebar--opened {
@@ -86,12 +88,16 @@ ul > li {
 .sidebar__menu {
   position: absolute;
   left: -400px;
+  -webkit-transition: left .3s;
+  transition: left .3s;
 }
 
 .sidebar--opened .sidebar__menu {
   left: 0;
   width: 100%;
   text-align: center;
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
 }
 
 .sidebar__hamburger-icon {
