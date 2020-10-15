@@ -1,11 +1,11 @@
-
 @font-face
   font-family: 'alegreya'
   src: url('./fonts/alegreyasanssc-black-webfont.woff2') format('woff2'), url('./fonts/alegreyasanssc-black-webfont.woff') format('woff')
   font-weight: normal
   font-style: normal
 
-html, body
+html,
+body
   height: 100%
 
 .wrapper
@@ -22,25 +22,49 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   background: #fcf5e6
+
 ul
   margin: 0
   padding: 0
-  & > li
-    list-style: none
+
+ul>li
+  list-style: none
 
 .hero
   height: 100vh
   min-height: 650px
-  background: url("/img/bg/hero.jpg") center center / cover no-repeat
+  background: url('../img/bg/hero.jpg') center center / cover no-repeat
   position: relative
   margin-bottom: 130px
+
+.header
+  width: 1290px
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-top: 27px
+
+.mail
+  text-decoration: none
+  text-align: center
+  color: inherit
+
+  &__title
+    margin-bottom: 3px
+
   &__content
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    width: 1140px
-    height: 72%
+    background: #212121
+    color: yellow
+    padding: 5px 10px
+
+.hero__content
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 1140px
+  height: 72%
 
 .sidebar
   width: 75px
@@ -74,7 +98,7 @@ ul
   &__hamburger-icon
     width: 29px
     height: 29px
-    fill: #ffbc2f
+    fill: #ffc92f
 
   &__hamburger
     display: block
@@ -105,46 +129,24 @@ ul
   &__close-icon
     width: 29px
     height: 29px
-    fill: #ffbc2f
+    fill: #ffc92f
 
 .side-menu__item
   margin-bottom: 20px
 
 .side-menu__link
   font-size: 20px
-  color: #ffbc2f
+  color: #ffc92f
   text-decoration: none
   text-transform: uppercase
-  font-family: 'Yanone Kaffeesatz', sans-serif
+  font-family: 'Yanone Kaffeesatz', Arial, sans-serif
 
   &:hover
     color: #d82727
 
-.header
-  width: 1290px
-  margin: 0 auto
-  display: flex
-  justify-content: space-between
-  align-items: center
-  padding-top: 27px
-
-.mail
-  text-decoration: none
-  text-align: center
-  color: inherit
-
-  &__title
-    margin-bottom: 3px
-  &__content
-    background: #212121
-    color: #ffbc2f
-    font-size: 16px
-    padding: 5px 10px
-
 .fade-slider
   width: 100%
   height: 100%
-
 
   &__item
     background: center center / contain no-repeat
@@ -157,48 +159,38 @@ ul
     opacity: 0
     transition: opacity .3s
 
-
   &__item--visible
     opacity: 1
 
-
   &__item--style-tshirts
-    background-image: url("./img/content/hero/slider_pic_1.png")
-
+    background-image: url("../img/content/hero/slider_pic_1.png")
 
   &__item--style-tshirts .fade-slider__text
     left: 50%
     top: 50%
     transform: translateX(-164%) translateY(-52%)
 
-
   &__item--style-games
-    background-image: url("./img/content/hero/slider_pic_2.png")
-
+    background-image: url("../img/content/hero/slider_pic_2.png")
 
   &__item--style-games .fade-slider__text
     left: 50%
     bottom: 0
     transform: translateX(-50%)
 
-
   &__item--style-games .lined-text
     align-items: center
 
-
   &__item--style-presents
-    background-image: url("./img/content/hero/slider_pic_3.png")
-
+    background-image: url("../img/content/hero/slider_pic_3.png")
 
   &__item--style-presents .fade-slider__text
     left: 0
     bottom: 0
     transform: translateY(-120%)
 
-
   &__item--style-presents .lined-text
     align-items: center
-
 
   &__text
     position: absolute
@@ -214,32 +206,35 @@ ul
   align-items: flex-start
   margin: 0
 
-
   &__word
     background: #000
     padding: 0 17px 8px
     margin-top: -7px
     white-space: nowrap
-    &:nth-child(2n)
-      margin-left: 8px
-    &--color-yellow
-      color: #ffb92f
+
+  &__word--color-yellow
+    color: #ffc92f
+
+  &__word:nth-child(2n)
+    margin-left: 8px
+
+  &--no-indent .lined-text__word
+    margin-left: 0
 
 .filter
   display: flex
-  justify-content: center
   align-items: center
+  justify-content: center
   margin-bottom: 100px
+
   &__item
-    margin-right: 48px
-    &:last-child
-      margin-right: 0
-    &--active .filter__link
-      color: #ffb92f
-      background-color: #1b1b1b
+    margin-right: 40px
+
+  &__item:last-child
+    margin-right: 0
 
   &__link
-    font-family: 'Yanone Kaffeesatz', sans-serif
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif
     text-transform: uppercase
     padding: 3px 21px
     color: #1b1b1b
@@ -247,50 +242,62 @@ ul
     font-weight: bold
     display: inline-block
     text-decoration: none
-    &:hover
-      color: #d82727
+
+  &__link:hover
+    color: #d82727
+
+  &__item--active .filter__link
+    color: #ffc92f
+    background: #1b1b1b
+
 .products
   margin-bottom: 160px
+
   &__list
     display: flex
     flex-wrap: wrap
-    margin: -27px
+    margin-left: -28px
+
   &__item
-    width: 302px
+    width: 303px
     height: 386px
-    background: #ffb92f
+    background: #ffc92f
     margin-bottom: 35px
-    margin-left: 27px
+    margin-left: 28px
     position: relative
-    &:hover .products__desc
-      transform: translateY(0%)
-    &--color-black
-      background: #232323
-    &--color-black .products__price
-      border-bottom-color: #ffb92f
-      &--color-black .products__price-amount
-        color: #212121
-    &--size-double
-      width: 630px
-      height: 544px
+
   &__price
     position: absolute
-    left: -6px
     top: 18px
+    left: -6px
     width: 126px
     border-bottom: 45px solid #232323
     border-left: 5px solid transparent
     border-right: 2px solid transparent
     transform: rotate(-181deg)
-    &-amount
-      font-size: 30px
-      font-weight: bold
-      font-family: 'Yanone Kaffeesatz', sans-serif
-      color: #ffffff
-      transform: rotate(181deg)
-      position: absolute
-      right: 28px
-      top: 2px
+
+  &__price-amount
+    font-size: 30px
+    font-weight: bold
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif
+    color: #fff
+    transform: rotate(181deg)
+    position: absolute
+    top: 2px
+    right: 28px
+
+  &__item--color-black
+    background: #232323
+
+  &__item--color-black .products__price
+    border-bottom-color: #ffc92f
+
+  &__item--color-black .products__price-amount
+    color: #212121
+
+  &__item--size-double
+    width: 634px
+    height: 544px
 
   &__content
     height: 100%
@@ -299,46 +306,54 @@ ul
     justify-content: center
     position: relative
     overflow: hidden
+
+  &__item:hover .products__desc
+    transform: translateY(0%)
+
   &__desc
     position: absolute
     bottom: 0
     left: 0
     right: 0
     padding: 23px 30px
-    background: rgba(35, 35, 35, 0.8)
+    background: rgba(35, 35, 35, .8)
     font-size: 15px
+    color: #fff
     display: flex
     flex-direction: column
-    color: #fff
     align-items: center
     transform: translateY(100%)
-    transition: transform 0.5s
-
-    &-text
-      text-align: center
-      margin-bottom: 18px
+    transition: transform .3s
 
   &__img
     display: block
-    min-width: 90%
-    min-height: 90%
+    max-width: 90%
+    max-height: 100%
+
+  &__desc-text
+    text-align: center
+    margin-bottom: 18px
+
 .btn
   text-transform: uppercase
-  font-family: 'Yanone Kaffeesatz', sans-serif
+  font-family: 'Yanone Kaffeesatz', Arial, sans-serif
   font-size: 24px
   padding: 2px 30px
-  background: #212121
-  color: #ffb92f
+  background: #1b1b1b
+  color: #ffc92f
   display: inline-block
   text-decoration: none
+
   &:hover
     background: #d82727
     color: #fff
 
-.collection
+.collections
   margin-bottom: 135px
+
   &__list
     display: flex
+
   &__item
     min-height: 474px
     flex: 1
@@ -346,25 +361,26 @@ ul
     margin-right: 30px
     background: url('../img/bg/pattern.png') center center / 500px
     position: relative
-    &:last-child
-      margin-right: 0
-    &:before
-      content: ""
-      display: block
-      position: absolute
-      height: 176%
-      width: 60%
-      top: -17%
-      left: -18%
-      background: center center  / contain no-repeat
 
-    &--type-guys:before
-      background-image: url('../img/collections/collection_man.png')
-    &--type-girls:before
-      background-image: url('../img/collections/collection_woman.png')
-      top: -31%
-      width: 80%
-      left: -25%
+  &__item:before
+    content: ""
+    display: block
+    position: absolute
+    height: 176%
+    width: 60%
+    top: -17%
+    left: -18%
+    background: center center / contain no-repeat
+
+  &__item--type-guys:before
+    background-image: url('/img/collections/collection_man.png')
+
+  &__item--type-girls:before
+    background-image: url('/img/collections/collection_woman.png')
+    top: -31%
+    width: 80%
+    left: -25%
+
   &__link
     display: block
     padding: 74px 13% 74px 44%
@@ -374,98 +390,123 @@ ul
     position: relative
     height: 100%
     box-sizing: border-box
-    &:hover .btn
-      background: #d82727
-      columns: #fff
+
+  &__link:hover .btn
+    background: #d82727
+    color: #fff
+
   &__title
-    font-family: 'Yanone Kaffeesatz', sans-serif
-    font-weight: bold
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif
     font-size: 70px
+    font-weight: bold
     line-height: 1
     text-transform: uppercase
     margin-top: 0
     margin-bottom: 11px
+
+  &__item:last-child
+    margin-right: 0
+
   &__desc
     margin-bottom: 28px
 
 .footer
   margin-bottom: 115px
+
   &__container
     width: 1105px
+
 .site-menu
   margin-bottom: 115px
+
   &__sections
     display: flex
     justify-content: space-between
+
   &__col
     margin-right: 20px
-    &:last-child
-      margin-right: 0
+
+  &__col:last-child
+    margin-right: 0px
+
   &__title
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif
     font-size: 24px
-    font-family: 'Yanone Kaffeesatz', sans-serif
-    color: #212121
+    font-weight: bold
+    color: #1b1b1b
     text-transform: uppercase
     margin-bottom: 24px
+
   &__item
     margin-bottom: 15px
+
   &__link
     color: #737373
-    text-decoration: none
     font-size: 15px
-    &:hover
-      color: #d82727
+    text-decoration: none
+
+  &__link:hover
+    color: #d82727
+
   &__text
     font-size: 15px
-    color: #212121
+    color: #1b1b1b
     margin-bottom: 30px
-    &-row
-      color: inherit
-      text-decoration: none
-      display: block
-      margin-bottom: 5px
-  &__container
-    width: 1105px
+
+  &__text-row
+    color: inherit
+    text-decoration: none
+    display: block
+    margin-bottom: 5px
+
 .extras
   display: flex
   margin-bottom: 95px
+
   &__col
     margin-right: 20px
     flex: 1
-    &:last-child
-      margin-right: 0
-    &-socials
-      height: 100%
-      background: #000
-      background: url("../img/bg/pattern.png") center center / 500px
-      display: flex
-      align-items: center
-      justify-content: center
+
+  &__col:last-child
+    margin-right: 0px
+
   &__best
     text-align: center
     color: #fff
     background: #232323
     font-size: 50px
     font-weight: bold
-    font-family: 'Yanone Kaffeesatz', sans-serif
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif
     text-transform: uppercase
-    display: block
     padding: 39px 10%
+    display: block
     text-decoration: none
     line-height: 1
+
+  &__col-socials
+    height: 100%
+    background: url('./img/bg/pattern.png') center center / 500px
+    display: flex
+    align-items: center
+    justify-content: center
+
 .socials
   display: flex
+
   &__item
     margin-right: 50px
-    &:last-child
-      margin-right: 0px
+
+  &__item:last-child
+    margin-right: 0px
+
   &__link
     width: 38px
     height: 38px
     display: block
-    &:hover .socials__icon
-      fill: #d82727
+
+  &__link:hover .socials__icon
+    fill: #d82727
+
   &__icon
     width: 100%
     height: 100%
-    display: block
